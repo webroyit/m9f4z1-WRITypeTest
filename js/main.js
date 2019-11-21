@@ -10,3 +10,28 @@ const scoreDisplay = document.querySelector("#score");
 const timeDisplay = document.querySelector("#time");
 const message = document.querySelector("#message");
 const seconds = document.querySelector("#seconds");
+
+// list of words
+const words = [
+    "Algorithm",
+    "Program",
+    "Argument",
+    "Boolean",
+    "Compilation",
+    "Conditionals",
+    "Constants",
+    "Data Types",
+    "Declaration",
+    "Exception",
+    "Expression",
+    "Framework",
+    "Hardcode",
+    "Endless Loop",
+    "Iteration",
+    "Keywords",
+    "Operator",
+    "Operand",
+    "Variable",
+    "Package",
+    "Source data"
+]
