@@ -1,3 +1,5 @@
+window.addEventListener("load", init);
+
 // global variables
 let time = 10;
 let score = 0;
@@ -35,3 +37,17 @@ const words = [
     "Package",
     "Source data"
 ]
+
+// start the game
+function init(){
+    showWord(words);
+}
+
+// display a random word from the array
+function showWord(words){
+    // generate a random number
+    const index = Math.floor(Math.random() * words.length);
+
+    // output a random number
+    currentWord.innerHTML = words[index];
+}
