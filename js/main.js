@@ -41,6 +41,9 @@ const words = [
 // start the game
 function init(){
     showWord(words);
+
+    // call the function every second
+    setInterval(countDown, 1000);
 }
 
 // display a random word from the array
@@ -50,4 +53,17 @@ function showWord(words){
 
     // output a random number
     currentWord.innerHTML = words[index];
+}
+
+// count down timer
+function countDown(){
+    if(time > 0){
+        // decrease the time
+        time--;
+    }
+    else if(time === 0){
+        isPlaying = false;
+    }
+    // show the time in the UI
+    timeDisplay.innerHTML = time;
 }
