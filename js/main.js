@@ -44,6 +44,8 @@ function init(){
 
     // call the function every second
     setInterval(countDown, 1000);
+    // check the game status
+    setInterval(checkStatus, 50);
 }
 
 // display a random word from the array
@@ -62,8 +64,16 @@ function countDown(){
         time--;
     }
     else if(time === 0){
+        // game is over
         isPlaying = false;
     }
     // show the time in the UI
     timeDisplay.innerHTML = time;
+}
+
+// check game status
+function checkStatus(){
+    if(!isPlaying && time === 0){
+        message.innerHTML = "Typing is Over"
+    }
 }
