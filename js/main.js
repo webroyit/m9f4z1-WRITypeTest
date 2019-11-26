@@ -40,12 +40,36 @@ const words = [
 
 // start the game
 function init(){
+    // load the words
     showWord(words);
-
+    // match the word input
+    wordInput.addEventListener('input', startMatch);
     // call the function every second
     setInterval(countDown, 1000);
     // check the game status
     setInterval(checkStatus, 50);
+}
+
+// match the input word
+function startMatch(){
+    if(matchWords()){
+        console.log("Match");
+    }
+}
+
+// match the current word to the input word
+function matchWords(){
+    // wordInput is the input element
+    // currentWord is the h2 element
+    if(wordInput.value === currentWord.innerHTML){
+        message.innerHTML = "You got it!";
+        return true;
+    }
+    else{
+        message.innerHTML = '';
+        return false;
+    }
+
 }
 
 // display a random word from the array
