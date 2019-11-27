@@ -1,7 +1,7 @@
 window.addEventListener("load", init);
 
 // global variables
-let time = 10;
+let time = 5;
 let score = 0;
 let isPlaying;
 
@@ -55,14 +55,23 @@ function startMatch(){
     if(matchWords()){
         // start the next words and user get the point.
         isPlaying = true;
-        time = 11;
+        time = 6;
         showWord(words);
         wordInput.value = '';
         score++;
     }
 
-    //update the UI
-    scoreDisplay.innerHTML = score;
+    // if score is -1, show 0
+    if(score === -1){
+        //update the UI
+        scoreDisplay.innerHTML = 0;
+    }
+    else{
+        //update the UI
+        scoreDisplay.innerHTML = score;
+    }
+
+    
 }
 
 // match the current word to the input word
@@ -106,6 +115,8 @@ function countDown(){
 // check game status
 function checkStatus(){
     if(!isPlaying && time === 0){
-        message.innerHTML = "Typing is Over"
+        message.innerHTML = "Typing is Over";
+        // reset the score on the new game
+        score = -1;
     }
 }
