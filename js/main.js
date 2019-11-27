@@ -53,8 +53,16 @@ function init(){
 // match the input word
 function startMatch(){
     if(matchWords()){
-        console.log("Match");
+        // start the next words and user get the point.
+        isPlaying = true;
+        time = 11;
+        showWord(words);
+        wordInput.value = '';
+        score++;
     }
+
+    //update the UI
+    scoreDisplay.innerHTML = score;
 }
 
 // match the current word to the input word
